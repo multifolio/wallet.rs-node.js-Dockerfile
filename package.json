@@ -1,0 +1,13 @@
+{
+    "name": "wallet.rs-tryout",
+    "version": "1.0.0",
+    "description": "Working dockerfile",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "@iota/wallet": "^2.0.3-rc.8",
+        "dotenv": "^16.0.3"
+    }
+}
