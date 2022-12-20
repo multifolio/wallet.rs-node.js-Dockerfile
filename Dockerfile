@@ -9,10 +9,11 @@ RUN apt-get update && apt-get install -y libudev-dev libusb-1.0-0-dev libclang-d
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# Copy files from host(your machine) to container
 COPY package*.json index.js .env ./
 
+# Install app dependencies
 RUN npm install
 
-
+# Command that is executed when the container is created('docker run') from the image
 CMD [ "npm", "start" ]
