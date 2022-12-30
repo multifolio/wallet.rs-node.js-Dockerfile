@@ -1,4 +1,4 @@
-# This Dockerfile builds a container with Rust 1.66 on top of the Debian "buster" base image
+# Alternative Dockerfile with rust as base image works with @iota/wallet package version "2.0.3-rc.8"
 FROM rust:1.66-buster
 
 # Update package manager and install Node.js
@@ -14,3 +14,12 @@ RUN apt-get update && apt-get install -y libudev-dev libusb-1.0-0-dev libclang-d
 
 # Install app dependencies
 # RUN npm install
+
+
+# How one can use this:
+# 1. docker build -f Dockerfile.rust -t [image name:tag]
+# 2. docker run -it [image name:tag] bash
+# 3. Open container with Visual Studio with Container extension ('Attach Visual Studio to container')
+# 4. Clone repository into container('Open repository')
+# 5. Install packages(@iota/wallet) 
+# 6. Run wallet-rs inside container
