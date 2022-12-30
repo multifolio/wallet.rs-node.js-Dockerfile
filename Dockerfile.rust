@@ -1,0 +1,16 @@
+# This Dockerfile builds a container with Rust 1.66 on top of the Debian "buster" base image
+FROM rust:1.66-buster
+
+# Update package manager and install Node.js
+RUN apt-get update && apt-get install -y curl
+RUN curl -sL https://deb.nodesource.com/setup_18.x | bash -
+RUN apt-get install -y nodejs
+
+# Install libudev-dev and more
+RUN apt-get update && apt-get install -y libudev-dev libusb-1.0-0-dev libclang-dev clang
+
+# Copy package json
+# COPY package*.json .
+
+# Install app dependencies
+# RUN npm install
